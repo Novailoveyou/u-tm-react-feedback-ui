@@ -16,18 +16,27 @@ function App() {
     }
   ]
 
+  const loading = false
+  const showComments = true
+
+  if (loading) return <h1>Loading...</h1>
+
+  const commentBlock = (
+    <div className='comments'>
+      <h3>Comments ({comments.length})</h3>
+      <ul>
+        {comments.map((comment, idx) => (
+          <li key={comment.id}>{comment.text}</li>
+        ))}
+      </ul>
+    </div>
+  )
+
   return (
     <div className='container'>
       <h1>{title}</h1>
       <p>{body}</p>
-      <div className='comments'>
-        <h3>Comments ({comments.length})</h3>
-        <ul>
-          {comments.map((comment, idx) => (
-            <li key={comment.id}>{comment.text}</li>
-          ))}
-        </ul>
-      </div>
+      {showComments && commentBlock}
     </div>
   )
 }
