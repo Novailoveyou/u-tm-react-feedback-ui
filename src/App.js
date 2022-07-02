@@ -1,8 +1,10 @@
+import React from 'react'
+
 const App = () => {
-  return (
-    <div>
-      <h1>Hello from the app component</h1>
-    </div>
+  return React.createElement(
+    'div',
+    { className: 'container' },
+    React.createElement('h1', {}, 'My App')
   )
 }
 
