@@ -1,11 +1,5 @@
 import { useState } from 'react'
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  NavLink
-} from 'react-router-dom'
-import Card from './components/shared/Card'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { v4 as uuidv4 } from 'uuid'
 import Header from './components/Header'
 import FeedbackList from './components/FeedbackList'
@@ -53,14 +47,6 @@ const App = () => {
         </Routes>
       </div>
 
-      <Card>
-        <NavLink to='/' activeClassName='active'>
-          Home
-        </NavLink>
-        <NavLink to='/about' activeClassName='active'>
-          About
-        </NavLink>
-      </Card>
       <AboutIconLink />
     </Router>
   )
