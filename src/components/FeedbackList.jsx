@@ -1,8 +1,12 @@
 import { motion, AnimatePresence } from 'framer-motion'
-import PropTypes from 'prop-types'
+import { useContext } from 'react'
+// import PropTypes from 'prop-types'
 import FeedbackItem from './FeedbackItem'
+import FeedbackContext from './context/FeedbackContext'
 
-const FeedbaclList = ({ feedback, handleDelete }) => {
+const FeedbaclList = ({ handleDelete }) => {
+  const { feedback } = useContext(FeedbackContext)
+
   if (!feedback || feedback.length === 0) {
     return <p>No feedback yet</p>
   }
@@ -32,14 +36,14 @@ const FeedbaclList = ({ feedback, handleDelete }) => {
   // )
 }
 
-FeedbaclList.propTypes = {
-  feedback: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-      text: PropTypes.string.isRequired,
-      rating: PropTypes.number.isRequired
-    })
-  )
-}
+// FeedbaclList.propTypes = {
+//   feedback: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+//       text: PropTypes.string.isRequired,
+//       rating: PropTypes.number.isRequired
+//     })
+//   )
+// }
 
 export default FeedbaclList
