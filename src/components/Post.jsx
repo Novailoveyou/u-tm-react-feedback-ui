@@ -6,6 +6,7 @@ const Post = () => {
   return (
     <div>
       <h1>Post {params.id}</h1>
+      <h2>Post {params.name}</h2>
     </div>
   )
 }
